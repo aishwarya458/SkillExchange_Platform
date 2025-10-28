@@ -1,0 +1,32 @@
+{% extends 'main.html' %}
+
+{% block content %}
+
+
+<div class="container">
+    <div class="row">
+    
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-2">
+        <label for="email">Email</label>
+        <input type="email" name="email" placeholder="Enter Email example@gmail.com"/>
+        </div>
+        <div class="mb-2">
+        <label for="username">Username:</label>
+        <input type="text" name="username" placeholder="Enter Username" />
+        </div>
+        <div class="mb-2">
+        <label>Password:</label>
+        <input type="password" name="password" placeholder="Enter Password" />
+        </div>
+        <input type="submit" value="register" />
+    </form>
+
+    <p>Already Registerd ?</p>
+    <a href="{% url 'login' %}">Login</a>
+    </div>
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8" style="font-size: 18px;">
+        <h1 class="mb-4 text-center">Contact Us</h1>
+          <p class="lead text-center" style="font-size: 20px;">
+          Have questions, suggestions, or feedback? We'd love to hear from you!
+          </p>
+        <hr>
+        <div class="contact_form mb-5 background-color--dark">
+          <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+              <label for="first_name" class="form-label">First name*</label>
+              <input type="text" class="form-control custom-input" id="first_name" name="first_name" required>
+            </div>
+            <div class="mb-3">
+              <label for="last_name" class="form-label">Last name*</label>
+              <input type="text" class="form-control custom-input" id="last_name" name="last_name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email address*</label>
+              <input type="email" class="form-control custom-input" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone Number (Please include country code)</label>
+              <input type="text" class="form-control custom-input" id="phone" name="phone">
+            </div>
+            <div class="mb-3">
+              <label for="company" class="form-label">Company/Organization*</label>
+              <input type="text" class="form-control custom-input" id="company" name="company" required>
+            </div>
+            <div class="mb-5">
+              <label for="message" class="form-label">Any Message for Us</label>
+              <textarea class="form-control custom-input" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--main" style="font-size: 16px;">Send Message</button>
+          </form>
+        </div>
+
+
+        <div class="mt-4">
+          <h5>Or reach us at:</h5>
+          <ul>
+            <li>Email: <a href="mailto:aishwarya9@gmail.com">info@skillexchange.com</a></li>
+            <li>Instagram, Twitter, LinkedIn, Github (see footer)</li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

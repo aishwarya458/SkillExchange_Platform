@@ -1,0 +1,36 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <h1 class="mb-4 text-center">About SkillExchange</h1>
+      <p class="lead text-center">
+        <strong>SkillExchange</strong> is a platform designed to connect learners from around the world, enabling them to find study partners, join topic-based rooms, and share knowledge in a collaborative environment.
+      </p>
+      <hr>
+      <h3>Our Mission</h3>
+      <p>
+        We believe that learning is more effective and enjoyable when done together. SkillExchange aims to foster a supportive community where users can:
+      </p>
+      <ul>
+        <li>Find and join study rooms based on their interests</li>
+        <li>Connect with like-minded learners</li>
+        <li>Share resources, ideas, and motivation</li>
+        <li>Grow their knowledge and skills collaboratively</li>
+      </ul>
+      <h3>Features</h3>
+      <ul>
+        <li>Create and join topic-based study rooms</li>
+        <li>Real-time messaging within rooms</li>
+        <li>Personalized user profiles</li>
+        <li>Activity feeds and room participation tracking</li>
+      </ul>
+      <h3>Contact Us</h3>
+      <p>
+        Have questions or feedback? Reach out via our <a href="{% url 'contact' %}">Contact</a> page or connect with us on social media!
+      </p>
+    </div>
+  </div>
+</div>
+{% endblock %}

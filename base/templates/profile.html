@@ -1,0 +1,76 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<main class="profile-page layout layout--3">
+  <div class="container">
+    <!-- Topics Start -->
+    {% include 'topics_component.html' %}
+    <!-- Topics End -->
+
+    <!-- Room List Start -->
+    <div class="roomList">
+      <div class="profile">
+        <div class="profile__avatar">
+          <div class="avatar avatar--large active">
+
+    
+            <!-- Avatar (small, clickable) -->
+            <img src="{{ user.get_avatar }}" 
+                alt="Profile" width="40" height="40" 
+                style="cursor:pointer; border-radius:50%;" 
+                data-bs-toggle="modal" 
+                data-bs-target="#profileModal">
+
+            <!-- Modal -->
+            <div class="modal fade" id="profileModal" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content bg-transparent border-0 text-center">
+
+                  <!-- Close Button -->
+                  <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" 
+                          data-bs-dismiss="modal" aria-label="Close"></button>
+
+                  <!-- Large Image -->
+                  <img src="{{ user.get_avatar }}" 
+                      alt="Profile Picture" 
+                      class="img-fluid rounded shadow-lg"
+                      style="width: 100%; max-width: 600px; height: auto; object-fit: contain;">
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="profile__info">
+          <h3>{{user.name}}</h3>
+          <p>@{{user.username}}</p>
+          {% if request.user == user %}
+          <a href="{% url 'update-user' %}" class="btn btn--main btn--pill">Edit Profile</a>
+          {% endif %}
+        </div>
+        <div class="profile__about">
+          <h3>About</h3>
+          <p>
+            {{user.bio}}
+          </p>
+        </div>
+      </div>
+
+      <div class="roomList__header">
+        <div>
+          <h2>Study Rooms Hosted by AISHWARYA</a>
+          </h2>
+        </div>
+      </div>
+      {% include 'feed_component.html' %}
+
+
+    </div>
+    <!-- Room List End -->
+
+    <!-- Activities Start -->
+    {% include 'activity_component.html' %}
+    <!-- Activities End -->
+  </div>
+</main>
+{% endblock content %}
